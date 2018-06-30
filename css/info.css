@@ -1,0 +1,225 @@
+
+.header{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	padding: 0px 20px;
+	background:#fff; 
+	box-shadow: -2px 2px 5px rgba(20,20,20,.3)
+}
+.container-box{
+	padding-top: 50px
+}
+.logo{
+	float: left;
+	width: 100px；
+	padding:5px 0
+}
+.logo img{
+}
+.nav{
+	float: right;
+
+}
+.nav ul{
+	float: right;
+}
+.nav li{
+	float: left;
+	width: 100px;
+	text-align: center;
+	line-height: 50px
+}
+
+.nav li a{
+	display: block;
+	height: 50px;
+
+}
+.search{
+	float: left;
+	width: 100px;
+	position: relative;
+	transition: width 0.2S,border-color 0.2S;
+	-webkit-transition: width 0.2S,border-color 0.2S;
+}
+.search-input{
+	border: 1px solid #eaeaea;
+	height: 40px;
+	line-height: 40px;
+	width:100%;
+	padding-right:40px;
+	margin-top: 5px;
+	overflow: hidden;
+	background: none；
+	transition: width 0.2S,border-color 0.2S;
+	-webkit-transition: width 0.2S,border-color 0.2S;
+	border-radius: 3px
+}
+.search-input input{
+	border: none;
+	box-shadow: none;
+	display:block;
+	width: 100%;
+	height: 100%;
+	padding-left:5px;
+	outline: none;
+}
+
+.search i{
+	display: block;
+	height: 40px;
+	width:40px;
+	color: #999;
+	position: absolute;
+	right: 0;
+	top:5px;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+
+}
+
+
+
+/*wenzhang*/
+
+#text-box{
+	width: 70%;
+	min-width: 1000px;
+	margin: 20px auto 0 auto;
+	background: #fff;
+	padding: 20px
+}
+.text-info{
+	border-bottom: 1px solid #e3e3e3;
+	padding-bottom: 20px;
+}
+.text-info h1{
+	font-size: 24px;
+	color: #666
+}
+.text-auto span{
+	display: inline-block;
+	margin-right:20px;
+	margin-top:10px; 
+	color: #999
+}
+.text-text{
+	margin-top:20px;
+	line-height: 25px
+}
+.text-img{
+	margin-top: 10px: 
+}
+.text-img img{
+	max-width：100%;
+	height:auto;
+	display: inline-block;
+	vertical-align: top
+}
+
+
+/*评论*/
+.pinglunBox{
+	margin-top:20px;
+	border-top: 1px solid #e3e3e3;
+	padding-top: 20px;
+	overflow: hidden;
+}
+.pinglunBox h2{
+	font-size: 18px;
+	font-weight: 400;
+	color: #666;
+	margin-top:0;
+}
+.pinglun-box{
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+.submitPl{
+	width: 80px;
+	background: #f63;
+	color:#fff;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	display: block;
+	text-align: center;
+	margin-top:10px;
+	float: right;
+	cursor: pointer;
+
+}
+.pinglun-box .pinglunInset{
+	flex:1;
+}
+.clickzan{
+	margin-top:20px;
+	border-top: 1px solid #e3e3e3;
+	padding-top: 20px;
+}
+.clickzan li{
+	float: left;
+	width:50px;
+	font-size:24px;
+	text-align: center;
+
+}
+.clickzan li span{
+	cursor: pointer;
+}
+.clickzan li span:last-child{
+	display: block;
+	font-size: 15px;
+	text-align:center;
+}
+.clickzan li  i{
+	color: #999
+}
+.clickzan ul{
+	overflow: hidden;
+	width: 100%
+}
+.list-pl li{
+	border-bottom: 1px solid #e3e3e3;
+	padding-bottom: 10px;
+	margin-top:10px;
+}
+
+.pl-list h2{
+	font-size: 18px;
+	font-weight: 400;
+	color: #666;
+	margin-top:0;
+}
+
+.pl-page-box{
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+.pl-page-box span{
+	flex: .1;
+	color: #999
+}
+.pl-page-box p{
+	flex: .9;
+	margin: 0;
+}
+.pl-page-time span{
+	float: right;
+	color: #999
+}
+.pl-page-time{
+	width: 100%;
+	overflow: hidden;
+	margin-top:10px 
+}
+
+
+

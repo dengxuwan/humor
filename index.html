@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>幽默杂货铺</title>
+<meta charset="utf-8">
+<link rel="bookmark"  type="image/x-image"  href="images/time.jpg"/>
+<link rel="shortcut icon" href="img/logo.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="./css/rest.css" />
+<link rel="stylesheet" type="text/css" href="./css/index.css" />
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="./css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<link href="./css/agency.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js"></script>
+<script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script src="https://cdn.bootcss.com/bignumber.js/7.0.1/bignumber.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src=js/nebulas.js></script>
+<script src=js/nebPay.js></script>
+<script src=js/config.js></script>
+<script src=js/template-web.js></script>
+<script src=js/index_vue.js></script>
+<script src=js/index.js></script>
+
+
+
+</head>
+<script type="text/javascript">
+	$(function(){
+		$(".search-input input").on("focus",function(){
+			$(".search").css({
+				'width':'150px'
+			})
+		});
+		$(".search-input input").on("blur",function(){
+			$(".search").css({
+				'width':'100px'
+			})
+		})
+		$("#publicAtc").on('click',function(){
+
+			showDialog('发布段子',1,{})
+		});
+		$("#no-login-publish").on('click',function(){
+
+			showDialog('发布段子',1,{})
+		});
+		$(".goPingLun").on('click',function(){
+			showDialog('评论',2,{})
+		});
+		$(".dashang").on('click',function(){
+			showDialog('打赏',3,{})
+		});
+		$("#closeDialog").on('click', function(){
+			$(".dialog").hide()
+		})
+		$(".addInput").on('click',function(){
+			var obj =$(".imgAddress").clone(true)
+			$(this).parent().find("form").append(obj)
+		})
+		$(".ds-dialog li").on('click',function(){
+			clickAmount = $(this).attr("data");
+			$(this).css("background", "#0066FF").css("color","#ffffff");
+			$(this).siblings().css("background", "#ffffff").css("color","#000000");
+		})
+		$(".h-reload").on('click',function(){
+			getJokeInfoList(config.myAddress);
+		})
+		$("body").css("min-height", $(window).height())
+	})
+	var clickJokeId ="";
+	var clickAmount = "";
+	function showDialog(title,type,obj){
+			clickJokeId	= obj;
+			$(".dialog").show(100)
+			$(".dialog-box h3").text(title);
+			$(".dialog").show(100)
+			if (type == 1){
+				// 发布段子
+				$(".pinglunbox").hide(100)
+				$(".dasangbox").hide(100)
+				$(".sendbox").show(100)
+			} else if (type == 2){
+				// 评论
+				$(".sendbox").hide(100)
+				$(".dasangbox").hide(100)
+				$(".pinglunbox").show(100)
+			} else {
+				// 打赏
+				$(".pinglunbox").hide(100)
+				$(".sendbox").hide(100)
+				$(".dasangbox").show(100)
+			}
+			$(".dialog-box").css({
+				'top':'50%'
+			})
+	}
+</script>
+<body>
+	<div id="app">
+	<div class="loading">
+		<div class="loadingbox">
+			 <div class="loader">
+		        <div class="loader-inner ball-spin-fade-loader">
+		          <div></div>
+		          <div></div>
+		          <div></div>
+		          <div></div>
+		          <div></div>
+		          <div></div>
+		          <div></div>
+		          <div></div>
+		        </div>
+	     	</div>
+     	</div>
+	</div>
+	<div class="dialog">
+		<div class="dialog-box">
+			<h3>分享段子</h3>
+			<span class="el-icon-close" id="closeDialog"></span>
+			<div class="sendbox">
+					<div class="uc-edit-tips">
+	                        <em>投稿小贴士：</em>
+	                        <ol style="display: block;">
+	                            <li>图片类投稿的请直接粘贴以http开头的图片网址；</li>
+	                            <li>投稿内容与图片均请勿包含裸露/色情/血腥/暴力等违规内容；</li>
+	                            <li>投稿相关问题请反馈咨询。</li>
+	                        </ol>
+	                  </div>
+				  <div class="form-group">
+				    <label>标题：</label>
+				    <input type="email"  id="joke_title" class="form-control"  placeholder="天马行空的标题向来是本杂货铺的特性">
+				  </div>
+				  <div class="form-group">
+				    <label >内容：</label>
+				    <textarea type="text" id="joke_content" rows="5" class="form-control" placeholder="请输入内容"></textarea>
+				    <li class="form-tips fc-gray">*长度应在200字符以内</li>
+				  </div>
+				   <div class="form-group imgAddress">
+				    <label for="exampleInputPassword1">图片地址：</label>
+				    	<input type="text"  class="form-control joke_pic"  placeholder="http://">
+				  	</div>
+			
+
+				 <!-- <div class="addInput">
+				 	<small >+</small>
+				 </div> -->
+  					<button type="submit" class="btnAuto" onclick="addJokeInfo()">提交</button>
+				
+			</div>
+			<div class="pinglunbox">
+				<div class="uc-edit-tips">
+                <em>评论小贴士：</em>
+                <ol style="display: block;">
+                    <li>评论内容在提交后15秒内写入区块链，一旦写入成功会自动加载评论内容;</li>
+                    <li>评论内容请勿包含裸露/色情/血腥/暴力等违规内容;</li>
+                    <li>相关问题请联系我们。</li>
+                </ol>
+	            </div>
+				  <div class="form-group">
+				    <label>内容：</label>
+				    <textarea type="text" id="commentContent" rows="5" class="form-control text-left" placeholder="请输入内容"></textarea>
+				  </div>
+  					<button type="button" class="btnAuto" onclick="sendComment()">评论</button>
+			</div>
+			<div class="dasangbox">
+				<ul class="ds-dialog">
+					<li data='0.0001'>0.0001Nas</li>
+					<li data='0.001'>0.001Nas</li>
+					<li data='0.01'>0.01Nas</li>
+					<li data='0.01'>0.1Nas</li>
+					<li data='1'>1Nas</li>
+					<li data='2'>2Nas</li>
+					<li data='5'>5Nas</li>
+					<li data='10'>10Nas</li>
+				</ul>
+				  
+  				<button type="submit" class="btnAuto" onclick="reward()">打赏</button>
+				
+			</div>
+
+		</div>
+	</div>
+	<div class="container-box">
+		
+		  <!-- Navigation -->
+	    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+	      <div class="container">
+	       
+	          <img src="img/logo.png" class="head_logo" width="60px" height="70px" />
+	           <a class="navbar-brand js-scroll-trigger" href="#">
+	        幽默杂货铺</a>
+	        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	          Menu
+	          <i class="fa fa-bars"></i>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarResponsive">
+	          <ul class="navbar-nav text-uppercase" style="margin:auto">
+	             <li class="nav-item">
+	              <a class="nav-link js-scroll-trigger" href="index.html">首页</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link js-scroll-trigger" href="shiyong.html">使用方法</a>
+	            </li>
+	             <li class="nav-item" id="publicAtc">
+	              <a class="nav-link js-scroll-trigger">投稿</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link js-scroll-trigger" href="myCenter.html">个人中心</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link js-scroll-trigger" href="index.html#contact">联系我们</a>
+	            </li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+
+	      <!-- Header -->
+	    <header class="masthead middle_img">
+	      <div class="container">
+	      </div>
+	    </header>
+
+
+		<div class="toptips">提示：本站部分操作需要安装星云钱包插件支持！插件安装请移步至 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a></div>
+		<!-- libiao -->
+		<section class="list-home">
+			<div class="content">
+				<div class="h-tabpanel clearfix">
+                        <div class="h-info clearfix">
+                            <div class="h-updates">今日更新 <strong id="todayNum">16</strong></div>
+                            <div class="h-time"><span class="year">2018</span> <span class="week">星期六</span><strong><i class="month">06</i>/<i class="day">02</i></strong></div>
+                        </div>
+                        <div class="h-reload fr"><a class="glyphicon glyphicon-repeat" title="刷新页面"></a></div>
+                    </div>
+				<ul class="content-box" id="content-box">
+					<script id="list" type="text/html">
+						 {{each list as value}}
+						<li>
+							<div class="page-title">
+									<h1><a href="info.html?jokeInfoId={{value.id}}">{{value.title}}</a></h1>
+									<div class="title-fb">
+										<span><i class="glyphicon glyphicon-time"></i><small>{{value.time | dateFormat}}</small></span>
+										<span><i class="glyphicon glyphicon-user"></i><small>{{value.author}}</small></span>
+									</div>
+								</div>
+								<div class="content-arc">
+									<p>{{value.content}}</p>
+									<div class="content-img">
+										{{each value.pics as v}}
+											<P><img src="{{v}}"></P>
+										{{/each}}
+									</div>
+								</div>
+
+								<div class="content-bottom">
+									<ul>
+										
+										<li onclick="showDialog('发布评论',2,'{{value.id}}')">
+											<span class="el-icon-edit-outline"></span><small>{{value.comments.length}}</small>
+										</li>
+										<li class="dashang" onclick="showDialog('打赏作者',3,'{{value.id}}')">
+											<span class="el-icon-star-off"></span><small>{{value.amount}}Nas</small>
+										</li>
+									</ul>
+									<a class="goPingLun" href="javascript:showDialog('发布评论',2,'{{value.id}}')">去评论</a>
+								</div>
+							</li>
+							{{/each}}
+					</script>
+					
+				</ul>
+			</div>
+			<div class="rigthContent">
+				<div class="bg1 b1 boxshadow mb10">
+					<div class="userbtnFT_wrap clearfix ">
+						<a class="publish" id="no-login-publish"><i class="el-icon-edit"></i>发帖</a>
+						<!--<a class="audit" href="/login.html" ><i class="iconfont icon-jifenduihuan"></i>签到</a>-->
+					</div>
+				</div>
+				<div class="h-b" style="margin-top:20px">
+		            <p class="h-title">热点段子</p>
+		            <span class="h-more"><!--<a href="#" target="_blank" class="fc-gray">所有标签 &raquo;</a>--></span>
+        		</div>
+        		<div>
+        			<ul class="text-list weekhot" style="display: block;" id="hotUl">
+        				<script id="hotScript" type="text/html">
+						 {{each list as value index}}
+						 	{{if index < 15}}
+	                            <li class="text-overflow"><span class="text-list-num">{{index+1}}</span>
+	                            	<a href="info.html?jokeInfoId={{value.id}}" target="_blank" title="{{value.title}}">{{value.title}}
+	                            	</a>
+	                            </li>
+	                          {{/if}}     
+                          {{/each}}
+                          </script>                                       
+                    </ul>
+        		</div>
+			</div>
+			<div class="clear"></div>		
+		</section>
+	</div>
+
+ <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">星云链的未来，等你一起创造</h2>
+            
+            <p style="color: white">
+              <el-button type="success" onclick="window.location.href='https://incentive.nebulas.io/cn/signup.html?invite=KvuuZ'">成为开发者</el-button>
+            <p style="color: white">如何联系作者: 363669440@qq.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div align="center">
+          <span class="copyright">Copyright © Ride 基于星云链文字社区平台，<a target="_blank" href="https://nebulas.io/">了解星云链</a></span>
+        </div>
+      </div>
+    </footer>
+
+
+</div>
+
+
+
+</body>
+</html>

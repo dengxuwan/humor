@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>关于</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="./css/rest.css" />
+<link rel="stylesheet" type="text/css" href="./css/about.css" />
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js"></script>
+<script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script src="https://cdn.bootcss.com/bignumber.js/7.0.1/bignumber.min.js"></script>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src=js/nebulas.js></script>
+<script src=js/nebPay.js></script>
+<script >
+	$(function(){
+		$(".search-input input").on("focus",function(){
+			$(".search").css({
+				'width':'150px'
+			})
+		});
+		$(".search-input input").on("blur",function(){
+			$(".search").css({
+				'width':'100px'
+		})
+		})
+		$(".navLeftBox li").on('click', function(){
+			var index = $(this).index();
+			var $atc=$(".atc-ul")
+			$(this).addClass("active").siblings().removeClass("active")
+			$atc.find('li').eq(index).show().siblings().hide();
+
+		})
+		$("body").css("min-height", $(window).height())
+	
+	})
+	function toIndexSearch(){
+		var keyword = $("#keyword").val();
+		window.location.href="index.html?keyword="+keyword;
+	}
+</script>
+</head>
+<body>
+	<div class="container-box">
+		<div class="header">
+				<div style="width:70%;min-width:1000px; margin: 0 auto">
+						<div class="logo">
+							<a><img src="./images/time.jpg"></a>
+						</div>
+						<div class="nav">
+							<div class="search">
+								<div class="search-input">
+									<input type="text" placeholder="搜索" autocomplete="off" id="keyword">
+								</div>
+								<i class="glyphicon glyphicon-search" onclick="toIndexSearch()"></i>
+							</div>
+							<ul>
+								<li>
+									<a href="index.html">首页</a>
+								</li>
+								<li>
+									<a href="mycenter.html">个人</a>
+								</li>
+								<li>
+									<a href="about.html">关于</a>
+								</li>
+								<li>
+									<a href="https://github.com/dengxuwan/jiankezhi">Github</a>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+				</div>
+			</div>
+		<div class="banner">
+			<a href="#"></a>
+		</div>
+
+		<div class="section-box">
+			<div class="section-contnet">
+				<div class="section-left">
+					<ul class="nav-left-box navLeftBox">
+						<li class="active">
+							<a>关于星云链</a>
+						</li>
+						<li>
+							<a>关于我们</a>
+						</li>
+						<li>
+							<a >本网站智能合约</a>
+						</li>
+						<li>
+							<a>开发资料大全</a>
+						</li>
+					</ul>
+				</div>
+				<div class="section-right">
+					<ul class="atc-ul">
+						<li>
+							<div class="atc-box">
+									<div class="atc-title">
+										<h1>关于星云链</h1>
+									</div>
+									<div class="atc-main">
+										<img src="images/ne0.png" style="width:100%;">
+										<img src="images/ne.png" style="width:100%;">
+										<div class="text-xs-center  ">
+											<p class="">
+											 	<a href="https://nebulas.io/cn/technology.html" class="btn-blue-bright-outline btn" style="padding-right: 40px">了解星云技术核心</a>
+											</p>
+										</div>
+									</div>
+							</div>
+						</li>
+						<li>
+							<div class="atc-box">
+									<div class="atc-title">
+										<h1>关于我们</h1>
+									</div>
+									<div class="atc-main">
+										<p>欢迎来到贱客，这是一个内涵图交流平台，平台所有数据全部储存于链社区的智能合约当中，数据永远保存在区块链上，永不丢失。</p>
+										<P>本项目是基于<a href="https://www.nebulas.io/cn">星云链</a>开发的DAPP,使用项目之前请安装星去链钱包<a  href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>,不然投搞、评论、打赏功能无法正常使用，只能查看段子！</P>
+										<P>您可以投稿，发布搞笑、有趣的内涵图，但请不要发布暴力/涉黄/血腥的图片，请自学遵守相关法律法规！</P>
+										<P>投稿成功之后，用户浏览到您的稿子觉得有趣，会评论、打赏nas，打赏的nas会自动转你的钱包，没有任何中介环节. </P>
+										<P>您可以在个人中心页面中查看自己的投稿记录、评论记录、赏金记录. </P>
+										<P>如果您也想开发DAPP，在开发过程中碰到任何问题请联系我. </P>
+										<P>如何联系开发者：</P>
+										<P>邮箱：363669440@qq.com</P>
+										<P>微信：<img src="images/wechat.jpg" style="width: 330px;heigth:300px;margin-left:50px"/></P>
+
+									</div>
+							</div>
+						</li>
+						<li>
+							<div class="atc-box">
+									<div class="atc-title">
+										<h1>智能合约</h1>
+									</div>
+									<div class="atc-main">
+										<p>请复制以下代码放置开发工具中</p>
+										<code>'use strict';
+//评论对象
+var Comment = function(obj) {
+	if (typeof obj === "string") {
+		obj = JSON.parse(obj);
+	}
+	if (typeof obj === "object") {
+		this.id = obj.id;
+		this.user = obj.user;
+		this.time = obj.time;
+		this.content = obj.content;
+	} else {
+		this.id = "";
+		this.user = "";
+		this.time = "";
+		this.content = "";
+	}
+};
+Comment.prototype = {
+	toString: function() {
+		return JSON.stringify(this);
+	}
+};
+//音乐对象
+var JokeInfo = function(obj) {
+	if (typeof obj === "string") {
+		obj = JSON.parse(obj);
+	}
+	if (typeof obj === "object") {
+		this.title = obj.title;
+		this.author = obj.author;
+		this.time = obj.time;
+		this.content = obj.content;
+		this.pics = obj.pics; // 图片URL
+		this.comments = obj.comments; // 评论列表
+		this.rewards = obj.rewards; // 打赏列表 
+	} else {
+		this.title = "";
+		this.author = "";
+		this.time = "";
+		this.content = "";
+		this.pics = []; // 图片URL
+		this.comments = []; // 评论列表
+		this.rewards = []; // 打赏列表 
+	}
+};
+JokeInfo.prototype = {
+	toString: function() {
+		return JSON.stringify(this);
+	},
+	//添加评论记录
+	addComment: function(comment) {
+		if (this.comments == null) {
+			this.comments = [];
+		}
+		if (typeof comment != "undefined") {
+			this.comments.push(comment);
+		}
+	},
+	// 增加打赏记录
+	addReward: function(rewardInfo) {
+		if (this.rewards == null) {
+			this.rewards = [];
+		}
+		if (typeof rewardInfo != "undefined") {
+			this.rewards.push(rewardInfo);
+		}
+	}
+};
+//打赏记录
+var RewardInfo = function(obj) {
+	if (typeof obj === "string") {
+		obj = JSON.parse(obj);
+	}
+	if (typeof obj === "object") {
+		this.from = obj.from; // 打赏人地址
+		this.to = obj.to; // 被打赏人地址
+		this.amount = obj.amount; //打赏金额
+		this.time = obj.time; //打赏时间
+	} else {
+		this.from = ""; // 打赏人地址
+		this.to = "";
+		this.amount = new BigNumber(0); //打赏金额
+		this.time = ""; //打赏时间
+	}
+}
+RewardInfo.prototype = {
+	toString: function() {
+		return JSON.stringify(this);
+	}
+};
+
+var JokeContract = function() {
+	// 定义全局变量
+	LocalContractStorage.defineProperties(this, {
+		_currentUser: "", // 当前使用人地址
+		_fee: new BigNumber(0.01),
+		_wei: 1000000000000000000,
+		_jSize: 0
+	});
+	// 定义全局的map变量
+	LocalContractStorage.defineMapProperties(this, {
+		"jokeInfos": {
+			parse: function(value) {
+				return new JokeInfo(value);
+			},
+			stringify: function(o) {
+				return o.toString();
+			}
+		},
+		"JokeInfoKeys": {
+			parse: function(value) {
+				return value.toString();
+			},
+			stringify: function(o) {
+				return o.toString();
+			}
+		}
+	});
+};
+JokeContract.prototype = {
+	init: function() {
+		this._currentUser = Blockchain.transaction.from;
+		this._fee = new BigNumber(0.01); // 手续费
+		this._wei = 1000000000000000000; // 单位
+		this._jSize = 0;
+		var key = this._currentUser +  Blockchain.transaction.timestamp.toString(10);
+		var jokeInfo = new JokeInfo({
+			title : '和网恋女友终于奔现了…',
+			author : this._currentUser,
+			content : '',
+			time: Blockchain.transaction.timestamp.toString(10),
+			rewards : [],
+			comments : [],
+			pics:['https://wx1.sinaimg.cn/mw690/6f57a017gy1frtbxhjo3zg20ah0e3qve.gif']
+		});
+		this.JokeInfoKeys.set(this._jSize, key);
+		this.jokeInfos.set(key, jokeInfo);
+		this._jSize ++;
+	},
+	//智能合约中验证地址正确性
+	_verifyAddress: function(address) {
+		// 1-valid, 0-invalid
+		var result = Blockchain.verifyAddress(address);
+		return {
+			valid: result == 0 ? false : true
+		};
+	},
+	currentUser: function() {
+		return this._currentUser;
+	},
+
+	resetCurrentUser: function(addr) {
+		if (this._currentUser === Blockchain.transaction.from && this.verifyAddress(addr)) {
+			this._currentUser = addr;
+		} else {
+			return 'Permission denied!';
+		}
+	},
+
+	wei: function() {
+		return this._wei;
+	},
+
+	resetWei: function(wei) {
+		if (this._creator === Blockchain.transaction.from) {
+			this._wei = wei;
+		} else {
+			return 'Permission denied!';
+		}
+	},
+
+	fee: function() {
+		return this._fee;
+	},
+
+	resetFee: function(value) {
+		if (this._creator === Blockchain.transaction.from) {
+			this._fee = new BigNumber(value);
+		} else {
+			return 'Permission denied!';
+		}
+	},
+	//对象深拷贝
+	_deepCopy: function(obj) {
+		var objClone;
+		if (obj.constructor == Object) {
+			objClone = new obj.constructor();
+		} else if (obj.constructor == Array && obj.length == 0) {
+			objClone = [];
+		} else {
+			objClone = new obj.constructor(obj.valueOf());
+		}
+		for (var key in obj) {
+			if (objClone[key] != obj[key]) {
+				if (typeof(obj[key]) == 'object') {
+					if (obj[key].constructor == Array && obj[key].length == 0) {
+						objClone[key] = [];
+					} else {
+						if (obj[key] == null) {
+							objClone[key] = null;
+						} else {
+							objClone[key] = this._deepCopy(obj[key]);
+						}
+					}
+				} else {
+					objClone[key] = obj[key];
+				}
+			}
+		}
+		objClone.toString = obj.toString;
+		objClone.valueOf = obj.valueOf;
+		return objClone;
+	},
+	// 查询所有列表
+	getAll: function() {
+		var list = [];
+		for (var i = 0; i < this._jSize; i++) {
+			var key = this.JokeInfoKeys.get(i);
+			var jokeInfo = this.jokeInfos.get(key);
+			jokeInfo['amount'] = this._getTotalAmount(jokeInfo.rewards);
+			jokeInfo['id'] = key;
+			list.push(jokeInfo);
+		}
+		list = list.reverse(); //反转
+		return list;
+	},
+	//分页获取段子列表
+	getListByPage : function(pageNo,pageSize) {
+		var list = this.getAll();
+		if(pageNo === 0) {
+			return list;
+		}
+		if (list.length < pageSize) {
+			return list;
+		}
+		var limit = pageNo * pageSize;
+	}
+	//打赏作者
+	reward: function(jokeInfoId) {
+		var from = Blockchain.transaction.from;
+		var time = Blockchain.transaction.timestamp.toString(10);
+		var value = Blockchain.transaction.value.div(this._wei);
+		var jokeInfo = this.jokeInfos.get(jokeInfoId);
+		if (!jokeInfo) {
+			throw new Error("没有找到此段子信息!");
+		}
+		var amount = new BigNumber(value).mul(this._wei);
+		var result = Blockchain.transfer(jokeInfo.author, amount);
+		if (!result) {
+			throw new Error("transfer failed.");
+		}
+		//增加打赏记录
+		var reward = new RewardInfo({
+			id: from + time.toString,
+			from: from,
+			to: jokeInfo.author,
+			amount: value,
+			time: time
+		});
+		jokeInfo.addReward(reward);
+		this.jokeInfos.set(jokeInfoId, jokeInfo);
+		return "success";
+	},
+	//添加评论
+	comment: function(jokeInfoId, content) {
+		var from = Blockchain.transaction.from;
+		var time = Blockchain.transaction.timestamp.toString(10);
+		var id = from + time;
+		var jokeInfo = this.jokeInfos.get(jokeInfoId);
+		if (!jokeInfo) {
+			throw new Error("没有找到此段子信息!");
+		}
+		var comment = new Comment({
+			id: id,
+			user: from,
+			content: content,
+			time: time
+		});
+		jokeInfo.addComment(comment);
+		this.jokeInfos.set(jokeInfoId, jokeInfo);
+	},
+	//编辑段子
+	editJoke: function(jokeInfoId, args) {
+		var arg = JSON.parse(args);
+		var from = Blockchain.transaction.from;
+		var time = Blockchain.transaction.timestamp.toString();
+		var id = from + time;
+		var jokeInfo = this.jokeInfos.get(jokeInfoId);
+		if (!jokeInfo) {
+			throw new Error("没有找到此段子信息!");
+		}
+		if (jokeInfo.author !== from) {
+			throw new Error("你没有权限编辑此段子!");
+		}
+		jokeInfo.title = arg.title;
+		jokeInfo.content = arg.content;
+		this.jokeInfos.set(jokeInfoId, jokeInfo);
+		return "succes";
+	},
+	//删除段子
+	deleteJoke: function(jokeInfoId) {
+		var arg = new JokeInfo(args);
+		var from = Blockchain.transaction.from;
+		var time = Blockchain.transaction.timestamp.toString(10);
+		var id = from + time;
+		var jokeInfo = this.jokeInfos.get(jokeInfoId);
+		if (!jokeInfo) {
+			throw new Error("没有找到此段子信息!");
+		}
+		if (jokeInfo.author !== from) {
+			throw new Error("你没有权限编辑此段子!");
+		}
+		this.jokeInfos.del(jokeInfoId);
+		return "succes";
+	},
+	//添加段子
+	addJoke: function(title, content, picStr) {
+		var from = Blockchain.transaction.from;
+		var time = Blockchain.transaction.timestamp.toString(10);
+		var pics = [];
+		if (picStr && picStr !== "") {
+			if (picStr.indexOf(",") !== -1) {
+				pics = picStr.split(",");
+			} else {
+				pics.push(picStr);
+			}
+		}
+		var jokeInfo = new JokeInfo({
+			id: from + time,
+			author: from,
+			title: title,
+			content: content,
+			pics: pics,
+			time: time,
+			comments: [],
+			rewards: []
+		});
+		console.info(jokeInfo);
+		this.jokeInfos.set(from + time, jokeInfo);
+		this.JokeInfoKeys.set(this._jSize, from + time);
+		this._jSize++;
+	},
+	// 查询自己发布的列表
+	_getMyList: function() {
+		var from = Blockchain.transaction.from;
+		var list = [];
+		for (var i = 0; i < this._jSize; i++) {
+			var key = this.JokeInfoKeys.get(i);
+			var jokeInfo = this.jokeInfos.get(key);
+			if (jokeInfo.author === from) {
+				jokeInfo['amount'] = this._getTotalAmount(jokeInfo.rewards);
+				jokeInfo['id'] = key;
+				list.push(jokeInfo);
+			}
+		}
+		return list.reverse();
+	},
+	//查看自己的赏金记录
+	_getRewardList: function() {
+		var from = Blockchain.transaction.from;
+		var list = [];
+		for (var i = 0; i < this._jSize; i++) {
+			var key = this.JokeInfoKeys.get(i);
+			var jokeInfo = this.jokeInfos.get(key);
+			for (var j = 0; j < jokeInfo.rewards.length; j++) {
+				var rewardInfo = jokeInfo.rewards[j];
+				if (rewardInfo.to === from) {
+					list.push({
+						id: key,
+						title: jokeInfo.title,
+						from: rewardInfo.from,
+						amount: rewardInfo.amount,
+						time: rewardInfo.time
+					});
+				}
+			}
+		}
+		return list.reverse();
+	},
+	//查看自己的评论记录
+	_getCommentList: function() {
+		var from = Blockchain.transaction.from;
+		var list = [];
+		for (var i = 0; i < this._jSize; i++) {
+			var key = this.JokeInfoKeys.get(i);
+			var jokeInfo = this.jokeInfos.get(key);
+			for (var j = 0; j < jokeInfo.comments.length; j++) {
+				var comment = jokeInfo.comments[j];
+				if (comment.user === from) {
+					list.push({
+						id: key,
+						title: jokeInfo.title,
+						content: comment.content,
+						time: comment.time
+					});
+				}
+			}
+		}
+		return list.reverse();
+	},
+	// 个人主页需要的数据
+	personal: function() {
+		var from = Blockchain.transaction.from;
+		var result = {};
+		var comments = this._getCommentList();
+		var rewards = this._getRewardList();
+		var jokeInfos = this._getMyList();
+		result["comments"] = comments;
+		result["rewards"] = rewards;
+		result["jokeInfos"] = jokeInfos;
+		return result;
+	},
+	_getTotalAmount: function(rewards) {
+		var amount = new BigNumber(0);
+		for (var i = 0; i < rewards.length; i++) {
+			amount = amount.plus(rewards[i].amount);
+		}
+		return amount;
+	},
+	//获取段子详情
+	getJokeInfo: function(jokeInfoId) {
+		var jokeInfo = this.jokeInfos.get(jokeInfoId);
+		if (!jokeInfo) {
+			throw new Error('此段子不存在!');
+		}
+		jokeInfo['id'] = jokeInfoId;
+		jokeInfo['amount'] = this._getTotalAmount(jokeInfo.rewards);
+		return jokeInfo;
+	},
+	//获取当前时间格式：20180530
+	_getCurrentDate : function() {
+		var y = new Date().getFullYear();
+		var m = new Date().getMonth() + 1;
+		var d = new Date().getDate();
+		var time = y + m + d;
+		return time;
+	},
+	//按标题搜索
+	search : function(keyWord) {
+		var reg = new RegExp(keyWord);
+		var list = [];
+		for (var i = 0; i < this._jSize; i++) {
+			var key = this.JokeInfoKeys.get(i);
+			var jokeInfo = this.jokeInfos.get(key);
+			if(jokeInfo.title.match(reg) || jokeInfo.content.match(reg)){
+				jokeInfo['amount'] = this._getTotalAmount(jokeInfo.rewards);
+				jokeInfo['id'] = key;
+				list.push(jokeInfo);
+			}
+		}
+		return list;
+	}
+};
+module.exports = JokeContract;</code>
+									</div>
+							</div>
+						</li>
+						<li>
+							<div class="atc-box">
+									<div class="atc-title">
+										<h1>开发资料大全</h1>
+									</div>
+									<div class="atc-main">
+										<P>如果你也想开发一款DAPP，下面的链接可能会对你有所帮助</P>
+										<P>了解研发路线图：<a href="https://github.com/nebulasio/wiki/blob/master/roadmap.md" target="_blank">路线图</a></P>
+										<P>下载技术白皮书：<a href="https://nebulas.io/docs/NebulasTechnicalWhitepaperZh.pdf" target="_blank">白皮书</a></P>
+										<P>查看技术Wiki：<a href="https://github.com/nebulasio/wiki/wiki" target="_blank">Wifi</a></P>
+										<P>申请领测试网星云币：<a href="https://testnet.nebulas.io/claim" target="_blank">领用</a></P>
+										<P>NebPay SDK：<a href="https://github.com/nebulasio/nebPay/blob/master/doc/NebPay%E4%BB%8B%E7%BB%8D.md" target="_blank">SDK</a>
+										<P>智能全约APi：<a href="https://github.com/nebulasio/wiki/blob/master/smart_contract_ch.md" target="_blank">API</a></P>
+										<P>官方开发文档：<a href="https://github.com/nebulasio/wiki/blob/master/tutorials.md" target="_blank">开发文档</a></P>
+										
+									</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<footer id="footer" class="footer">
+		<section id="site-socials" class="no-padding white-bg">
+			<div class="site-socials inner no-padding">
+
+				<!-- Adress, Mail -->
+				<div class="address socials animated fadeInRight visible" data-animation="fadeInRight" data-animation-delay="500">
+					<!-- Phone Number, Mail -->
+					<p>Copyright © 2018.基于
+						<a href="https://nebulas.io/" target="_blank">NAS</a>的内涵图发布系统
+						<a href="https://incentive.nebulas.io/cn/signup.html?invite=KvuuZ" target="_blank">点我发布DAPP获取100NAS</a>
+					</p>
+					<p>联系方式：363669440@qq.com</p>
+
+				</div>
+				<!-- End Adress, Mail -->
+			</div>
+			<!-- End Inner -->
+		</section>
+	</footer>
+</html>

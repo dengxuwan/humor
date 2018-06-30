@@ -1,0 +1,198 @@
+
+*{margin: 0 ;padding: 0; box-sizing:border-box;}
+body,html{
+  background-color: #ecf0f2;
+  font-size: 14px;
+  font-family: "Microsoft Yahei",STHeiti,sans-serif；
+}
+ul,li{
+  list-style: none;
+}
+a{
+  text-decoration: none
+}
+img{
+  display: block;
+}
+.clear{
+  clear: both;
+  display: block;
+
+}
+
+body{
+  background:#ecf0f2!important;
+  position: relative;
+  padding-bottom: 120px;
+}
+.loading {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  bottom: 0;
+  background: rgba(20,20,20,.1);
+  z-index: 9999999;
+  display: none
+
+}
+.loadingbox{
+  width: 200px;
+  height: 200px;
+  background: rgba(20,20,20,.8);
+  position: absolute;
+    left: 50%;
+     top:50%;
+     border-radius: 20px;
+     transform: translateY(-50%) translateX(-50%);
+
+}
+ .loader {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 1 auto;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 25%;
+      max-width: 25%;
+      height: 200px;
+      align-items: center;
+      justify-content: center; 
+      position: absolute;
+      left: 50%;
+      top:50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      transform: translateY(-50%) translateX(-50%)
+      
+  }
+  .nav ul li{
+  cursor: pointer;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  box-shadow:-1px 0px 0px #e3e3e3 inset; 
+  -webkit-box-shadow:-1px 0px 0px #e3e3e3 inset; 
+
+}
+.nav ul li:hover{
+  background: rgba(20,20,20,0.2);
+  color: #fff
+}
+.logo img {
+    height: 50px;
+}
+
+.footer {
+    text-align: center;
+    background: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 100px
+}
+.footer {
+    background-color: #FFFFFF;
+    border-top: 2px solid #FFFFF1;
+    color: #aaa;
+}
+.address {
+    width: 100%;
+    height: auto;
+}
+.socials {
+    width: 100%;
+    padding: 15px 10px;
+}
+footer p {
+    color: #aaa;
+    font-size: 12px;
+}
+.toptips {
+    width: 800px;
+    margin: 20px auto 5px;
+    border-radius: 100px;
+    background: #E56258;
+    color: #fff;
+    padding: 10px 30px 10px 10px;
+    text-align: center;
+    position: relative;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+
+@-webkit-keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.ball-spin-fade-loader {
+  position: relative; }
+  .ball-spin-fade-loader > div:nth-child(1) {
+    top: 25px;
+    left: 0;
+    -webkit-animation: ball-spin-fade-loader 1s 0s infinite linear;
+            animation: ball-spin-fade-loader 1s 0s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(2) {
+    top: 17.04545px;
+    left: 17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.12s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.12s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(3) {
+    top: 0;
+    left: 25px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.24s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.24s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(4) {
+    top: -17.04545px;
+    left: 17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.36s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.36s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(5) {
+    top: -25px;
+    left: 0;
+    -webkit-animation: ball-spin-fade-loader 1s 0.48s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.48s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(6) {
+    top: -17.04545px;
+    left: -17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.6s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.6s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(7) {
+    top: 0;
+    left: -25px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.72s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.72s infinite linear; }
+  .ball-spin-fade-loader > div:nth-child(8) {
+    top: 17.04545px;
+    left: -17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.84s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.84s infinite linear; }
+  .ball-spin-fade-loader > div {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    position: absolute; }
+
