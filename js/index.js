@@ -78,7 +78,7 @@ function addJokeInfo() {
 		$(".dialog").hide(100)
 		if (data.txhash) {
                 vue.$notify({
-                      message: "数据需要15秒时间写入区块链,是否成功请耐心等待系统自动通知！",
+                      message: "投稿数据需要15秒时间写入区块链,是否成功请耐心等待系统自动通知！",
                       duration: 20000,
                       showClose: true,
                       type: "warning",
@@ -93,7 +93,7 @@ function addJokeInfo() {
                             })
                             .then(d => {
                                   if (d.data && d.data.result.execute_result !== "") {
-                                        vue.$confirm('数据已经成功写入区块链,是否刷新列表?', '成功', {
+                                        vue.$confirm('投稿数据已经成功写入区块链,是否刷新列表?', '成功', {
                                               confirmButtonText: '刷新',
                                               cancelButtonText: '取消',
                                               type: 'success'
@@ -106,7 +106,7 @@ function addJokeInfo() {
                                         clearInterval(intervalQuery);
                                   } else if (d.data.result.status === 0) {
                                         vue.$notify({
-                                              message: "分享失败，有可能是您的余额不足!",
+                                              message: "投稿失败，有可能是您的余额不足!",
                                               duration: 0,
                                               showClose: true,
                                               type: "error",
@@ -145,7 +145,7 @@ function sendComment() {
 		$(".dialog").hide(100)
 		if (data.txhash) {
                 vue.$notify({
-                      message: "数据需要15秒时间写入区块链,是否成功请耐心等待系统自动通知！",
+                      message: "评论数据需要15秒时间写入区块链,是否成功请耐心等待系统自动通知！",
                       duration: 20000,
                       showClose: true,
                       type: "warning",
